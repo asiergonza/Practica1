@@ -3,9 +3,10 @@ package ecosistemas;
 
 import java.awt.*;
 
-import clases.Ecosistema;
 
-public class Agua extends Ecosistema{
+import clases.ElementoEcosistema;
+
+public class Agua extends ElementoEcosistema{
 	protected long cantidad;
 	
 	
@@ -30,6 +31,33 @@ public class Agua extends Ecosistema{
 	public void setCantidad(long cantidad) {
 		this.cantidad = cantidad;
 	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Agua -" + titulo + "-" + cantidad ;
+	}
+
+
+
+
+	@Override
+	public void evolucionar(int dias) {
+		
+		
+	}
+
+
+
+
+	@Override
+	public void getPanel() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	
 

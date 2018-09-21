@@ -1,47 +1,37 @@
 package clases;
 
-import java.awt.*;
-public abstract class Ecosistema {
+import java.util.*;
+
+public class Ecosistema {
+	
+	public ArrayList<ElementoEcosistema> listaEEs;
 	
 	
-	protected String titulo;
-	protected Point punto;
-	protected double x;
-	protected double y;
-
-	public Point getPunto() {
-		return punto;
+	public static Ecosistema ec = new Ecosistema();
+	public Ecosistema() {
+		
+		listaEEs = new ArrayList<>();
 	}
-
-	public void setPunto(Point punto) {
-		this.punto = punto;
+	
+	public ArrayList<ElementoEcosistema> getElementos() {
+		return listaEEs;
 	}
-
-	public double getX() {
-		return x;
+	
+	public static Ecosistema getMundo() {
+		
+		return ec;
+		
 	}
-
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	public double getY() {
-		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	
+	public static double distancia(ElementoEcosistema ee, ElementoEcosistema ee1) {
+		
+		double x = ee.getPunto().getX() - ee1.getPunto().getX();
+		double y = ee.getPunto().getY() - ee1.getPunto().getY();
+		double sumaCuadrados = x*x  + y*y;
+		double dis = Math.sqrt(sumaCuadrados);
+		return dis;
+		
 	}
 	
 	
-	
-
 }

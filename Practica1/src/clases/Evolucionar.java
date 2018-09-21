@@ -2,6 +2,6 @@ package clases;
 
 public interface Evolucionar {
 	
-	public void evolucionar();
+	public void evolucionar(int dias);
 
 }
