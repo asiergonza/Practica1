@@ -35,7 +35,7 @@ public class Ventana extends JFrame{
 	Point p;
 	int cuenta = 0;
 	JPanel pp;
-	int c = -1;
+	int c = 0;
 	ArrayList<JPanel> listaPanelesVida;
 	
 	public Ventana() {
@@ -122,7 +122,7 @@ public class Ventana extends JFrame{
 				ElementoEcosistema ab = null;
 				double restax = x2 - x1;
 				double restay = y2 - y1;
-				long superficie = (long) (restax * restay);
+				long superficie = (long) ((restax * restay)/100);
 				if(restax >0 || restay > 0 ) {
 				if(crear == true) {
 					if(c1.getSelectedIndex() == 0) {
@@ -250,7 +250,7 @@ public class Ventana extends JFrame{
 				p1.repaint();
 				
 				try {
-					sleep(20000);
+					sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

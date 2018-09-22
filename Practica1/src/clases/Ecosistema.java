@@ -25,9 +25,10 @@ public class Ecosistema {
 	
 	public static int distancia(ElementoEcosistema ee, ElementoEcosistema ee1) {
 		
-		double x = ee.getPunto().getX() - ee1.getPunto().getX();
-		double y = ee.getPunto().getY() - ee1.getPunto().getY();
+		double x = ee.getPunto().getX() + ee1.getPunto().getX();
+		double y = ee.getPunto().getY() + ee1.getPunto().getY();
 		double sumaCuadrados = x*x  + y*y;
+		//System.out.println(sumaCuadrados);
 		int dis = (int)Math.sqrt(sumaCuadrados);
 		return dis;
 		

@@ -33,7 +33,7 @@ public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
 
 	
 	
-	public ColoniaAbejas(String nom, Point p, Double x, Double y, Long c) {
+	public ColoniaAbejas(String nom, Point p, Double x, Double y, long c) {
 		poblacion = c;
 		super.punto = p;
 		super.titulo = nom;
@@ -49,16 +49,18 @@ public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
 		// TODO Auto-generated method stub
 		double factorCrecimiento = 1.0;
 		int numFlores = 0;
-		for (ElementoEcosistema ee : Ecosistema.getMundo().getElementos()) {
-		int dist = Ecosistema.distancia( this, ee );
-		if (ee instanceof ColoniaAbejas && ee!=this) { // Otra colonia de abejas perjudica
-		if (dist < 500) factorCrecimiento = factorCrecimiento * dist / 500;
-		} else if (ee instanceof PlantacionFlores) { // La cercanía de flores beneficia
-		if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500; numFlores += ((PlantacionFlores)ee).getCantidad();
-		} }
-		if (numFlores < 50) factorCrecimiento *= 0.1; // Insuficientes flores mata poblacion = (long) (poblacion * factorCrecimiento * dias);
-		if (poblacion > 5000) poblacion = 5000; // Límite de población
-		
+		for (ElementoEcosistema ee : Ecosistema.getMundo().listaEEs) {
+			int dist = Ecosistema.distancia( this, ee );
+			if (ee instanceof ColoniaAbejas && ee!=this) { // Otra colonia de abejas perjudica
+				if (dist < 500) factorCrecimiento = factorCrecimiento * dist / 500;
+			} else if (ee instanceof PlantacionFlores) { // La cercanía de flores beneficia
+				if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500; 
+				numFlores += ((PlantacionFlores)ee).getCantidad();
+			} }
+		if (numFlores < 50) factorCrecimiento *= 0.1; // Insuficientes flores mata 
+		poblacion = (long) (poblacion * factorCrecimiento * dias);
+		//if (poblacion > 5000) poblacion = 5000; // Límite de población
+
 	}
 	
 
