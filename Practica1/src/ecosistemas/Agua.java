@@ -74,7 +74,6 @@ public class Agua extends ElementoEcosistema{
 			pc.setBackground(Color.BLUE);
 			
 			
-			
 		
 	}
 		return pc;

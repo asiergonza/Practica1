@@ -99,7 +99,7 @@ public class Ventana extends JFrame{
 				if(b1.getText() == "Vida") {
 					hilo.start();
 					b1.setText("Parar");
-					p1.repaint();
+					//p1.repaint();
 					
 				}
 				else {
@@ -220,7 +220,26 @@ public class Ventana extends JFrame{
 					Ecosistema.getMundo().listaEEs.get(i).evolucionar(c);
 					//System.out.println(Ecosistema.getMundo().listaEEs.get(i));
 					JLabel jl = (JLabel)Ecosistema.getMundo().listaEEs.get(i).getPanel().getComponent(1);
+					//jl.setText("holaaaaa");
+					if(Ecosistema.getMundo().listaEEs.get(i) instanceof ColoniaAbejas){
+						
+						ColoniaAbejas ca = (ColoniaAbejas)Ecosistema.getMundo().listaEEs.get(i);
+						//ca.getPoblacion();
+						jl.setText(""+ ca.getPoblacion());
+						
+
+					}
+					if(Ecosistema.getMundo().listaEEs.get(i) instanceof PlantacionFlores){
+						PlantacionFlores fl = (PlantacionFlores)Ecosistema.getMundo().listaEEs.get(i);
+						jl.setText(""+ fl.getCantidad());
+						
+
+					}
 					
+					//p1.revalidate();
+					p1.repaint();
+					
+
 					
 				}
 				
@@ -231,7 +250,7 @@ public class Ventana extends JFrame{
 				p1.repaint();
 				
 				try {
-					sleep(200);
+					sleep(20000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

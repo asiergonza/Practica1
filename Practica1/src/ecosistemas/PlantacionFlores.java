@@ -29,17 +29,16 @@ public class PlantacionFlores extends ElementoEcosistema implements Evolucionar{
 		// TODO Auto-generated method stub
 		double factorCrecimiento = 0.75;
 		for (ElementoEcosistema ee : Ecosistema.getMundo().getElementos()) {
-		int dist = (int) Ecosistema.distancia( this, ee );
-		if (ee instanceof ColoniaAbejas) { // La cercanía de abejas beneficia
-		if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500; } else if (ee instanceof Agua) { // La cercanía de agua beneficia
-		if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500; cantidad = (long) (cantidad * factorCrecimiento * dias);
-		if (cantidad > 5000) cantidad = 5000;
-		}
+			int dist = (int)Ecosistema.distancia( this, ee );
+			if (ee instanceof ColoniaAbejas) { // La cercanía de abejas beneficia
+				if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500; } else if (ee instanceof Agua) { // La cercanía de agua beneficia
+					if (dist < 500) factorCrecimiento = factorCrecimiento / dist * 500;
+				}
 		}
 		cantidad = (long) (cantidad * factorCrecimiento * dias);
 		if (cantidad > 5000) cantidad = 5000;
 
-		
+
 	}
 
 	public long getCantidad() {

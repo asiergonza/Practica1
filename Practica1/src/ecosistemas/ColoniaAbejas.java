@@ -50,7 +50,7 @@ public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
 		double factorCrecimiento = 1.0;
 		int numFlores = 0;
 		for (ElementoEcosistema ee : Ecosistema.getMundo().getElementos()) {
-		int dist = (int) Ecosistema.distancia( this, ee );
+		int dist = Ecosistema.distancia( this, ee );
 		if (ee instanceof ColoniaAbejas && ee!=this) { // Otra colonia de abejas perjudica
 		if (dist < 500) factorCrecimiento = factorCrecimiento * dist / 500;
 		} else if (ee instanceof PlantacionFlores) { // La cercanía de flores beneficia
