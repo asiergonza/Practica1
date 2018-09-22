@@ -3,11 +3,13 @@ package ecosistemas;
 
 import java.awt.*;
 
+import javax.swing.*;
 
 import clases.ElementoEcosistema;
 
 public class Agua extends ElementoEcosistema{
 	protected long cantidad;
+	JPanel pc = null;
 	
 	
 	
@@ -53,8 +55,29 @@ public class Agua extends ElementoEcosistema{
 
 
 	@Override
-	public void getPanel() {
+	public JPanel getPanel() {
+		
+		
+		JLabel nombre = new JLabel("Agua", SwingConstants.CENTER);
+		JLabel lp = new JLabel(Long.toString(cantidad), SwingConstants.CENTER);
+		
 		// TODO Auto-generated method stub
+		if(pc == null) {
+			pc = new JPanel();
+			
+			pc.setLayout(new GridLayout(2, 1));
+			pc.add(nombre);
+			pc.add(lp);
+			
+			pc.setLocation(punto);
+			pc.setSize((int)x,(int)y);
+			pc.setBackground(Color.BLUE);
+			
+			
+			
+		
+	}
+		return pc;
 		
 	}
 	

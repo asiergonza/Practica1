@@ -1,6 +1,10 @@
 package ecosistemas;
 
+import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.Point;
+
+import javax.swing.*;
 
 import clases.Ecosistema;
 import clases.ElementoEcosistema;
@@ -9,6 +13,7 @@ import clases.Evolucionar;
 public class PlantacionFlores extends ElementoEcosistema implements Evolucionar{
 	
 	protected long cantidad;
+	JPanel pa = null;
 	
 	public PlantacionFlores(String nom, Point p, Double x, Double y, Long c) {
 		
@@ -52,8 +57,27 @@ public class PlantacionFlores extends ElementoEcosistema implements Evolucionar{
 	}
 
 	@Override
-	public void getPanel() {
+	public JPanel getPanel() {
+		
+		JLabel nombre = new JLabel("Flores", SwingConstants.CENTER);
+		JLabel lp = new JLabel(Long.toString(cantidad), SwingConstants.CENTER);
+		
 		// TODO Auto-generated method stub
+		if(pa == null) {
+			pa = new JPanel();
+			
+			pa.setLayout(new GridLayout(2, 1));
+			pa.add(nombre);
+			pa.add(lp);
+			
+			pa.setLocation(punto);
+			pa.setSize((int)x,(int)y);
+			pa.setBackground(Color.GREEN);
+			
+			
+		
+	}
+		return pa;
 		
 	}
 

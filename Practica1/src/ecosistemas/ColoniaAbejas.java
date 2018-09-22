@@ -1,6 +1,14 @@
 package ecosistemas;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.Point;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 import clases.Ecosistema;
 import clases.ElementoEcosistema;
@@ -21,6 +29,7 @@ public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
 
 
 	protected long poblacion;
+	JPanel pb = null;
 
 	
 	
@@ -61,8 +70,26 @@ public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
 
 
 	@Override
-	public void getPanel() {
+	public JPanel getPanel() {
+		
+		JLabel nombre = new JLabel("Abejas", SwingConstants.CENTER);
+		JLabel lp = new JLabel(Long.toString(poblacion), SwingConstants.CENTER);
+		
 		// TODO Auto-generated method stub
+		if(pb == null) {
+			pb = new JPanel();
+			
+			pb.setLayout(new GridLayout(2, 1));
+			pb.add(nombre);
+			pb.add(lp);
+			
+			pb.setLocation(punto);
+			pb.setSize((int)x,(int)y);
+			pb.setBackground(Color.YELLOW);
+			
+			
 		
 	}
+		return pb;
+}
 }

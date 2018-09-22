@@ -60,7 +60,7 @@ public abstract class ElementoEcosistema {
 	public abstract void evolucionar(int dias);
 	
 	
-	abstract public void getPanel();
+	abstract public JPanel getPanel();
 	
 	
 	
