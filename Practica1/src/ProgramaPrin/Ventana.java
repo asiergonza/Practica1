@@ -157,8 +157,8 @@ public class Ventana extends JFrame{
 					}
 					
 					p1.add(pp);
-					pp.repaint();
-					p1.repaint();
+					pp.revalidate();
+					p1.revalidate();
 					
 					
 				}
@@ -219,6 +219,8 @@ public class Ventana extends JFrame{
 				for(int i = 0; i < size ; i++) {
 					Ecosistema.getMundo().listaEEs.get(i).evolucionar(c);
 					//System.out.println(Ecosistema.getMundo().listaEEs.get(i));
+					JLabel jl = (JLabel)Ecosistema.getMundo().listaEEs.get(i).getPanel().getComponent(1);
+					
 					
 				}
 				
