@@ -10,7 +10,12 @@ import clases.Ecosistema;
 import clases.ElementoEcosistema;
 import clases.Evolucionar;
 
-public class PlantacionFlores extends ElementoEcosistema implements Evolucionar{
+/**
+ * @author asiergonzi
+ * Creamos y definimos una plantacion de flores que hereda de elemento ecosistema. 
+ *
+ */
+public class PlantacionFlores extends ElementoEcosistema implements Evolucionar{ //finalmente no usaremos la interfaz 
 	
 	protected long cantidad;
 	JPanel pa = null;

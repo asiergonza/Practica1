@@ -7,6 +7,10 @@ import javax.swing.*;
 
 import clases.ElementoEcosistema;
 
+/**
+ * @author asiergonzi
+ *Generaremos agua, y su constructor
+ */
 public class Agua extends ElementoEcosistema{
 	protected long cantidad;
 	JPanel pc = null;

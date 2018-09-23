@@ -2,6 +2,10 @@ package clases;
 
 import java.util.*;
 
+/**
+ * @author asiergonzi
+ *Generamos y definimos un ecosistema
+ */
 public class Ecosistema {
 	
 	public ArrayList<ElementoEcosistema> listaEEs;

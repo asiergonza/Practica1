@@ -5,6 +5,11 @@ package clases;
 import java.awt.*;
 
 import javax.swing.*;
+/**
+ * @author asiergonzi
+ * Creamos y definimos elemento ecosistema
+ *
+ */
 public abstract class ElementoEcosistema {
 	
 	

@@ -14,7 +14,12 @@ import clases.Ecosistema;
 import clases.ElementoEcosistema;
 import clases.Evolucionar;
 
-public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{
+/**
+ * @author asiergonzi
+ * definimos la clase colonia de abejas
+ *
+ */
+public class ColoniaAbejas extends ElementoEcosistema implements Evolucionar{  //finalmente no usaremos la interfaz. 
 	
 	public long getPoblacion() {
 		return poblacion;
